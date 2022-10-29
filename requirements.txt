@@ -1,101 +1,37 @@
-absl-py==1.3.0
-asttokens==2.0.8
-astunparse==1.6.3
-attrs==22.1.0
-backcall==0.2.0
-black==22.10.0
-cachetools==5.2.0
-certifi==2022.9.24
-charset-normalizer==2.1.1
-click==8.1.3
-colorama==0.4.5
-contourpy @ file:///D:/bld/contourpy_1666809640791/work
-cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1635519461629/work
-decorator==5.1.1
-executing==1.1.1
-flatbuffers==22.9.24
-fonttools @ file:///D:/bld/fonttools_1666827219016/work
-gast==0.4.0
-google-auth==2.13.0
-google-auth-oauthlib==0.4.6
-google-pasta==0.2.0
-grpcio==1.50.0
-h5py==3.7.0
-idna==3.4
-imageio==2.22.2
-importlib-metadata==5.0.0
-iniconfig==1.1.1
-ipython==8.5.0
-jedi==0.18.1
-keras==2.10.0
-Keras-Preprocessing==1.1.2
-kiwisolver @ file:///D:/bld/kiwisolver_1666805897768/work
-libclang==14.0.6
-Markdown==3.4.1
-MarkupSafe==2.1.1
-matplotlib @ file:///D:/bld/matplotlib-suite_1666979207783/work
-matplotlib-inline==0.1.6
-munkres==1.1.4
-mypy-extensions==0.4.3
-networkx==2.8.7
-numpy @ file:///D:/bld/numpy_1666788367701/work
-oauthlib==3.2.2
-opencv-python==4.6.0.66
-opt-einsum==3.3.0
-packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1637239678211/work
-pandas==1.5.1
-parso==0.8.3
-pathspec==0.10.1
-pickleshare==0.7.5
-Pillow @ file:///D:/bld/pillow_1666920708409/work
-platformdirs==2.5.2
-pluggy==1.0.0
-prompt-toolkit==3.0.31
-protobuf==3.19.6
-psutil==5.9.3
-pure-eval==0.2.2
-py==1.11.0
-pyasn1==0.4.8
-pyasn1-modules==0.2.8
-Pygments==2.13.0
-pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1652235407899/work
-PyQt5==5.15.7
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.11.0
-PyQtChart==5.12
-PyQtWebEngine==5.12.1
-pytest==7.1.3
-python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
-pytz==2022.5
-PyWavelets==1.4.1
-PyYAML==6.0
-requests==2.28.1
-requests-oauthlib==1.3.1
-rsa==4.9
-scikit-image==0.19.3
-scipy==1.9.3
-seaborn==0.12.1
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
-stack-data==0.5.1
-tensorboard==2.10.1
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.1
-tensorflow-estimator==2.10.0
-tensorflow-gpu==2.10.0
-tensorflow-io-gcs-filesystem==0.27.0
-termcolor==2.0.1
-thop==0.1.1.post2209072238
-tifffile==2022.10.10
-tomli==2.0.1
-torch==1.10.2+cu111
-torchvision==0.11.3
-tornado @ file:///D:/bld/tornado_1666788767305/work
-tqdm==4.64.1
-traitlets==5.5.0
-typing_extensions==4.4.0
-unicodedata2 @ file:///D:/bld/unicodedata2_1666809500461/work
-urllib3==1.26.12
-wcwidth==0.2.5
-Werkzeug==2.2.2
-wrapt==1.14.1
-zipp==3.9.0
+# Usage: pip install -r requirements.txt
+
+# Base ----------------------------------------
+matplotlib>=3.2.2
+numpy>=1.18.5
+opencv-python>=4.1.1
+Pillow>=7.1.2
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1
+tqdm>=4.41.0
+protobuf<4.21.3
+
+# Logging -------------------------------------
+tensorboard>=2.4.1
+# wandb
+
+# Plotting ------------------------------------
+pandas>=1.1.4
+seaborn>=0.11.0
+
+# Export --------------------------------------
+# coremltools>=4.1  # CoreML export
+# onnx>=1.9.0  # ONNX export
+# onnx-simplifier>=0.3.6  # ONNX simplifier
+# scikit-learn==0.19.2  # CoreML quantization
+# tensorflow>=2.4.1  # TFLite export
+# tensorflowjs>=3.9.0  # TF.js export
+# openvino-dev  # OpenVINO export
+
+# Extras --------------------------------------
+ipython  # interactive notebook
+psutil  # system utilization
+thop  # FLOPs computation
+# albumentations>=1.0.3
+# pycocotools>=2.0  # COCO mAP
+# roboflow
