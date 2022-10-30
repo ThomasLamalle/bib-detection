@@ -19,3 +19,6 @@ def test_bib_detection():
     )
 
     np.testing.assert_array_almost_equal(expected_result, result_array, 0.001)
+
+if __name__=="__main__":
+    pytest.main()
