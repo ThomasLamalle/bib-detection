@@ -10,8 +10,14 @@ jobs:
     name: win-64
     runs-on: windows-latest
     steps:
+      - name: Checkout github repo (+ download lfs dependencies)
       - uses: actions/checkout@v2
-
+        with:
+          lfs: true
+          
+      - name: Checkout LFS objects
+        run: git lfs checkout
+        
       - name: Setup Mambaforge
         uses: conda-incubator/setup-miniconda@v2
         with:
@@ -39,7 +45,7 @@ jobs:
           pip install pytest
         if: steps.cache.outputs.cache-hit != 'true'
       
-      # - name: Run tests
-      #   run: |
-      #     conda activate my-env
-      #     pytest test_detect_image.py
+      - name: Run tests
+        run: |
+          conda activate my-env
+          pytest test_detect_image.py
