@@ -1,6 +1,5 @@
 import argparse
 import tkinter
-from matplotlib import pyplot as plt
 
 from skimage import io
 import time
