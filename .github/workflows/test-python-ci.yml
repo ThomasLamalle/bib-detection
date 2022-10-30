@@ -31,6 +31,8 @@ jobs:
 
       - name: Update environment
         run: |
+          mamba create -n my-env python=3.9.2
+          conda activate my-env
           pip install -r .\requirements.txt 
           pip install setuptools==59.5.0
           pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
@@ -39,4 +41,5 @@ jobs:
       
       - name: Run tests
         run: |
+          conda activate my-env
           pytest test_detect_image.py
