@@ -1,21 +1,21 @@
-name: Python Package using Conda
-
-on: [push, workflow_dispatch]
+name: CI (conda)
+on: [push,workflow_dispatch]
 
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
+  build:
     strategy:
-      max-parallel: 5
-
+      matrix:
+        os: ['windows-latest']
+        python-version: [3.7]
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.10
-    - name: Add conda to system path
-      run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        echo $CONDA/bin >> $GITHUB_PATH
-
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Miniconda
+        uses: goanpeca/setup-miniconda@v1
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          miniconda-version: 'latest'
+          python-version: ${{ matrix.python-version }}
+          environment-file: environment.yml
