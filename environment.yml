@@ -49,7 +49,7 @@ dependencies:
   - pyqt=5.12.3=py39hb0d2dfa_4
   - python=3.9.13=h9a09f29_0_cpython
   - python-dateutil=2.8.2=pyhd8ed1ab_0
-  - python_abi=3.9=2_cp39
+  - python_abi=3.9
   - qt=5.12.9=h5909a2a_4
   - six=1.16.0=pyh6c4a22f_0
   - sqlite=3.39.4=hcfcfb64_0
