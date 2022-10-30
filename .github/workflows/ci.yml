@@ -1,6 +1,6 @@
 name: ci
 
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 
 env:
   CACHE_NUMBER: 0  # increase to reset cache manually
