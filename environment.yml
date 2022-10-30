@@ -47,7 +47,7 @@ dependencies:
   - pthread-stubs=0.4=hcd874cb_1001
   - pyparsing=3.0.9=pyhd8ed1ab_0
   - pyqt=5.12.3=py39hb0d2dfa_4
-  - python=3.11.0=h9a09f29_0_cpython
+  - python=3.9.13=h9a09f29_0_cpython
   - python-dateutil=2.8.2=pyhd8ed1ab_0
   - python_abi=3.9=2_cp39
   - qt=5.12.9=h5909a2a_4
@@ -148,6 +148,7 @@ dependencies:
     - thop==0.1.1-2209072238
     - tifffile==2022.10.10
     - tomli==2.0.1
+    - torch==1.10.2+cu111
     - torchvision==0.11.3
     - tqdm==4.64.1
     - traitlets==5.5.0
@@ -157,3 +158,4 @@ dependencies:
     - werkzeug==2.2.2
     - wrapt==1.14.1
     - zipp==3.9.0
+prefix: C:\Users\User\miniconda3\envs\yolov7
