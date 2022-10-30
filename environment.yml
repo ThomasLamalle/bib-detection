@@ -47,9 +47,9 @@ dependencies:
   - pthread-stubs=0.4=hcd874cb_1001
   - pyparsing=3.0.9=pyhd8ed1ab_0
   - pyqt=5.12.3=py39hb0d2dfa_4
-  - python=3.11.0
+  - python=3.9.0
   - python-dateutil=2.8.2=pyhd8ed1ab_0
-  - python_abi
+  - python_abi=3.9
   - qt=5.12.9=h5909a2a_4
   - six=1.16.0=pyh6c4a22f_0
   - sqlite=3.39.4=hcfcfb64_0
