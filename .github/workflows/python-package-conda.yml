@@ -1,13 +1,9 @@
 name: CI (conda)
-on: [push,workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   build:
-    strategy:
-      matrix:
-        os: ['windows-latest']
-        python-version: [3.7]
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -17,5 +13,5 @@ jobs:
           auto-update-conda: true
           auto-activate-base: false
           miniconda-version: 'latest'
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.11.0
           environment-file: environment.yml
