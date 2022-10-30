@@ -41,5 +41,6 @@ jobs:
         run: pip install -r .\requirements.txt & pip install setuptools==59.5.0 & pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
         if: steps.cache.outputs.cache-hit != 'true'
         
-      - name: Run test
-        run: pytest .\tests
+      - name: Run tests
+        shell: bash -l {0}
+        run: pytest ./tests
