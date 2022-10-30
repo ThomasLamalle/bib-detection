@@ -41,11 +41,11 @@ jobs:
         run: pip install -r .\requirements.txt & pip install setuptools==59.5.0 & pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
         if: steps.cache.outputs.cache-hit != 'true'
         
-      - name: Install conda build
-        run: mamba install conda-build 
+      # - name: Install conda build
+      #   run: mamba install conda-build 
         
-      - name: Install as develop package
-        run: mamba develop .
+      # - name: Install as develop package
+      #   run: mamba develop .
         
       - name: Run tests
         run: |
