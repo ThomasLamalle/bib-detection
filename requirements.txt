@@ -9,6 +9,7 @@ requests>=2.23.0
 scipy>=1.4.1
 tqdm>=4.41.0
 protobuf<4.21.3
+pytest
 
 # Logging -------------------------------------
 tensorboard>=2.4.1
