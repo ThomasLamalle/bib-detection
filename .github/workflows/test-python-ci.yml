@@ -34,10 +34,21 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ${{ matrix.prefix }}
-          key: ${{ matrix.label }}-conda-${{ hashFiles('requirements,txt') }}-${{ env.DATE }}-${{ env.CACHE_NUMBER }}
+          key: ${{ matrix.label }}-conda-${{ hashFiles('requirements.txt') }}-${{ env.DATE }}-${{ env.CACHE_NUMBER }}
         id: cache
 
-      - name: Update environment
-        run: mamba env update -n my-env -f .\requirements.txt & pip install setuptools==59.5.0 & pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+      - name: Update environment requirements
+        run: mamba env update -n my-env -f .\requirements.txt
+        if: steps.cache.outputs.cache-hit != 'true'
+        
+      - name: Activate environment  
+        run: conda activate my-env
+        if: steps.cache.outputs.cache-hit != 'true'
+        
+      - name: Update environment setuptools
+        run: pip install setuptools==59.5.0 & pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
         if: steps.cache.outputs.cache-hit != 'true'
 
+      - name: Update environment torch
+        run: pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+        if: steps.cache.outputs.cache-hit != 'true'
