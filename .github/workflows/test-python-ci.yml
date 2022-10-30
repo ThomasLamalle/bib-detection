@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: c:\hostedtoolcache\windows\python\3.9.13\x64\lib\site-packages
+          path: C:\Miniconda3\envs\my-env
           key: win-64-conda-${{ hashFiles('requirements.txt') }}-${{ env.DATE }}-${{ env.CACHE_NUMBER }}
         id: cache
 
