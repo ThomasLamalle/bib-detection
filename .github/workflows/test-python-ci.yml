@@ -38,7 +38,7 @@ jobs:
         id: cache
 
       - name: Update environment requirements
-        run: mamba env update -n my-env -f .\requirements.txt -c conda-forge
+        run: mamba env update -n my-env -f .\requirements.txt
         if: steps.cache.outputs.cache-hit != 'true'
         
       - name: Activate environment  
@@ -55,4 +55,8 @@ jobs:
 
       - name: Update environment torch
         run: pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+        if: steps.cache.outputs.cache-hit != 'true'
+        
+      - name: Update environment thop
+        run: pip install thop
         if: steps.cache.outputs.cache-hit != 'true'
