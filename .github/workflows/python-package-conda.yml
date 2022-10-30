@@ -7,16 +7,16 @@ jobs:
     runs-on: windows-latest
     strategy:
       max-parallel: 5
-
+      
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+    - uses: conda-incubator/setup-miniconda@v2
       with:
+        auto-update-conda: true
         python-version: 3.11
-    - name: Add conda to system path
+        
+    - name: PowerShell
+      shell: powershell
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        C:\Miniconda\condabin\conda.bat env update --file environment.yml --name base
-        C:\Miniconda\condabin\conda.bat init powershell
-        echo $CONDA/bin >> $GITHUB_PATH
+        conda info
+        conda list
+
