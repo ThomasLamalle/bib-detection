@@ -35,5 +35,6 @@ jobs:
       
       - name: Run tests
         run: |
+          mamba activate my-env
           pip install pytest
           pytest test_detect_image.py
