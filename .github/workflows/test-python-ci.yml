@@ -49,7 +49,5 @@ jobs:
         
       - name: Run tests
         run: |
-          mamba install conda-build
-          mamba develop .
           pip install pytest
-          pytest .\tests\
+          pytest test_detect_image
