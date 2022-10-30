@@ -39,7 +39,7 @@ jobs:
           pip install pytest
         if: steps.cache.outputs.cache-hit != 'true'
       
-      - name: Run tests
-        run: |
-          conda activate my-env
-          pytest test_detect_image.py
+      # - name: Run tests
+      #   run: |
+      #     conda activate my-env
+      #     pytest test_detect_image.py
