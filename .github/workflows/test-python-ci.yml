@@ -46,7 +46,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         
       - name: Update environment setuptools
-        run: pip install setuptools==59.5.0 & pip install torchvision==0.11.3 -f https://download.pytorch.org/whl/cu111/torch_stable.html
+        run: pip install opencv-python
+        if: steps.cache.outputs.cache-hit != 'true'
+        
+      - name: Update environment setuptools
+        run: pip install setuptools==59.5.0
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: Update environment torch
